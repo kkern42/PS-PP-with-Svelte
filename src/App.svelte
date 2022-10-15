@@ -1,7 +1,7 @@
 <script>
   import PSPPLogo from './assets/pingpong.svg'
   import Counter from './lib/Counter.svelte'
-  import Header from './lib/header.svelte'
+  import Header from './lib/Header.svelte'
 </script>
 
 <!-- add in player profiles when db is activated  -->

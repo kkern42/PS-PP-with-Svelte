@@ -1,4 +1,9 @@
+<script>
+import PSPPLogo from '../assets/pingpong.svg'
+</script>
+
 <div class="navbar">
+     <!-- <img src={PSPPLogo} class="logo" alt="PS PP Logo" /> -->
     <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
     <a href="#"><i class="fa fa-fw fa-search"></i>Champions</a> 
     <a href="#"><i class="fa fa-fw fa-envelope"></i>Past Brackets</a> 
@@ -6,7 +11,7 @@
   </div>
 
 <style>
-    .navbar {
+  .navbar {
   width: 100%;
   background-color: #333;
   overflow: auto;
@@ -29,11 +34,12 @@
 
 .active {
   background-color: #FE414D;
-  
-  height: 5.5rem;
-  
 }
-
+.logo {
+    width: 1.5rem;
+   
+    will-change: filter;
+  }
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
