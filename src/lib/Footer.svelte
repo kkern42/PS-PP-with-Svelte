@@ -2,10 +2,7 @@
     import PSPPLogo from '../assets/pingpong.svg';
 </script>
 
-<!--footer starts from here-->
 <footer class="footer">
-
-
 
 <div class="container">
 <ul class="foote_bottom_ul_amrc">
