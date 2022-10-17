@@ -1,5 +1,5 @@
 <script>
-import PSPPLogo from '../assets/pingpong.svg'
+  import PSPPLogo from '../assets/pingpong.svg'
 </script>
 
 <div class="navbar">
@@ -17,6 +17,7 @@ import PSPPLogo from '../assets/pingpong.svg'
   overflow: auto;
   position: fixed;
   height: 4.5rem;
+  z-index: 1;
 }
 
 .navbar a {
