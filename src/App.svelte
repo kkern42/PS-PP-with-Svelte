@@ -3,16 +3,19 @@
   import Ghost from './assets/ghost.png';
   import Counter from './lib/Counter.svelte';
   import Header from './lib/Header.svelte';
-  
+  import Footer from './lib/Footer.svelte';
+
   export let title;
 
   let image = PSPPLogo; 
-
+  let next = Ghost;
 
 
 
   const changeImage = () => {
-    image = Ghost;
+    let temp = image;
+    image = next;
+    next = temp;
   }
 </script>
 
@@ -54,6 +57,8 @@
       <iframe title="Tier 2 PS PP Tournament" src="https://brackethq.com/b/x6n6/embed/" width="100%" height="700" frameborder="0"></iframe>
     </div>
   </div>
+
+  <Footer/>
   
 </main>
 
