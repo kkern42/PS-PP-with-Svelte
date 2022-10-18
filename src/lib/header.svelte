@@ -36,11 +36,6 @@
 .active {
   background-color: #FE414D;
 }
-.logo {
-    width: 1.5rem;
-   
-    will-change: filter;
-  }
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;

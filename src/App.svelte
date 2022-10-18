@@ -7,16 +7,34 @@
 
   export let title;
 
-  let image = PSPPLogo; 
-  let next = Ghost;
+  let imageLogo = PSPPLogo; 
+  let nextImage = Ghost;
 
-
+  // If image changes this will rerun only dependent on if statment
+  $: if (imageLogo === Ghost){
+    title = "The Spooky"
+  }
+  else {
+    title = "PS PING PONG"
+  }
 
   const changeImage = () => {
-    let temp = image;
-    image = next;
-    next = temp;
+    let temp = imageLogo;
+    imageLogo = nextImage;
+    nextImage = temp;    
   }
+
+  let brackets = [
+    {
+      title: "Tier 1 Bracket - Fall 2022",
+      src: "https://brackethq.com/b/k4n6/embed/"
+    },
+    {
+      title: "Tier 2 Bracket - Fall 2022",
+      src: "https://brackethq.com/b/x6n6/embed/"
+    },
+
+  ];
 </script>
 
 <!-- add in player profiles when db is activated  -->
@@ -27,10 +45,10 @@
     <div>
 
       <a href="https://brackethq.com/b/k4n6/" target="_blank"> 
-        <img src={image} class="logo" alt="PS PP Logo" />
+        <img src={imageLogo} class="logo" alt="PS PP Logo" />
       </a>
     </div>
-    <h1>{title}</h1>
+    <h1>{title} Tournament</h1>
   
     <!-- <div class="card">
       <Counter />
@@ -43,19 +61,23 @@
     <p class="read-the-docs">
       Reach out to Ashely Kim, JD Pablo or Kevin Kern to learn more
     </p>
+
     <button on:click="{changeImage}">Click for Spooky</button>
-    <!-- style="width: 150%;" -->
-    <div class="bracket">
-      <h2 class="title">Tier 1 Bracket - Fall 2022</h2>
-      <iframe title="Tier 1 PS PP Tournament" src="https://brackethq.com/b/k4n6/embed/" width="100%" height="550" frameborder="0"></iframe>
-    </div>
+    
+    {#each brackets as bracket}
+      <div class="bracket">
+        <h2 class="title">{bracket.title}</h2>
+        <iframe title={bracket.title} src={bracket.src} width="100%" height="550" frameborder="0"></iframe>
+      </div>
+    
+      <hr/>
+    {/each}
   
-    <hr/>
-  
-    <div class="bracket">
-      <h2 class="title">Tier 2 Bracket - Fall 2022</h2>
-      <iframe title="Tier 2 PS PP Tournament" src="https://brackethq.com/b/x6n6/embed/" width="100%" height="700" frameborder="0"></iframe>
-    </div>
+    
+    <h3>Change title</h3>
+    <!-- <input type="text" value="{title}" on:input="{ (e) => { title = e.target.value; }}"/> -->
+    <!-- can bind any html properties -->
+    <input type="text" bind:value={title} />
   </div>
 
   <Footer/>
